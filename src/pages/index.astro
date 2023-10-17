@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import coverImage from "../assets/cover.jpeg";
 ---
 
 <Layout>
@@ -29,7 +31,7 @@ import Layout from "../layouts/Base.astro";
             <a
               href="/about"
               class="text-sm font-semibold leading-6 text-gray-900"
-              >Learn more <span aria-hidden="true">→</span></a
+              >More details <span aria-hidden="true">→</span></a
             >
           </div>
         </div>
@@ -37,9 +39,9 @@ import Layout from "../layouts/Base.astro";
     </div>
   </div>
   <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img
+    <Image
       class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-      src="/cover.jpeg"
+      src={coverImage}
       alt=""
     />
   </div>
