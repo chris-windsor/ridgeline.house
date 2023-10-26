@@ -1,5 +1,20 @@
 ---
 import { SITE_TITLE } from "../consts";
+
+const pages = [
+  {
+    url: "/plans",
+    title: "plans",
+  },
+  {
+    url: "https://autode.sk/3s9y1oA",
+    title: "3D model",
+  },
+  {
+    url: "/inspiration",
+    title: "inspiration",
+  },
+];
 ---
 
 <header class="absolute inset-x-0 top-0 z-50">
@@ -33,18 +48,18 @@ import { SITE_TITLE } from "../consts";
           </svg>
         </button>
         <div class="hidden lg:ml-12 lg:flex lg:gap-x-10">
-          <a
-            href="/plans"
-            class="text-sm font-semibold leading-6 text-gray-900"
-          >
-            plans
-          </a>
-          <a
-            href="/inspiration"
-            class="text-sm font-semibold leading-6 text-gray-900"
-          >
-            inspiration
-          </a>
+          {
+            pages.map((page) => {
+              return (
+                <a
+                  href={page.url}
+                  class="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  {page.title}
+                </a>
+              );
+            })
+          }
         </div>
       </nav>
     </div>
@@ -87,18 +102,18 @@ import { SITE_TITLE } from "../consts";
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a
-              href="/plans"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              plans
-            </a>
-            <a
-              href="/inspiration"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              inspiration
-            </a>
+            {
+              pages.map((page) => {
+                return (
+                  <a
+                    href={page.url}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {page.title}
+                  </a>
+                );
+              })
+            }
           </div>
         </div>
       </div>
