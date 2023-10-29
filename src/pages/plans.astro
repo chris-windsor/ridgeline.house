@@ -1,8 +1,16 @@
-<img
-  src="https://ridgeline-house.s3.us-west-2.amazonaws.com/elevations.jpg"
-  alt="elevations"
-/>
-<img
-  src="https://ridgeline-house.s3.us-west-2.amazonaws.com/firstfloor.jpg"
-  alt="first floor"
-/>
+---
+const architecturalPagesData = await fetch(
+  "https://ridgeline-house.s3.us-west-2.amazonaws.com/architecturalpages"
+);
+const architecturalPagesText = await architecturalPagesData.text();
+const architecturalPageList = architecturalPagesText.split(",");
+---
+
+{
+  architecturalPageList.map((page) => (
+    <img
+      src={`https://ridgeline-house.s3.us-west-2.amazonaws.com/${page}.jpg`}
+      alt={page}
+    />
+  ))
+}
